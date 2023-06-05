@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react'
 import {GrSearch} from 'react-icons/gr'
 import IngredientContext from '../context/ingredient/IngredientContext';
+import { useNavigate } from 'react-router-dom';
 
 const Ingredients = () => {
 
     const context = useContext(IngredientContext);
     const [name,setname] = useState("");
+    const naviagte = useNavigate();
+
 
     const changeHandler = (event)=>{
         setname(event.target.value);
@@ -18,7 +21,9 @@ const Ingredients = () => {
     } 
 
     const searchHandler = ()=>{
+        context.setingi(name);
         context.SearchIngribyname(name);
+        naviagte("/ingredients/search")
     }
 
   return (

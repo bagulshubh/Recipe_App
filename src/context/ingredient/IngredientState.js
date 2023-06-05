@@ -4,11 +4,17 @@ import IngredientContext from "./IngredientContext";
 const IngredientState = (props) => {
   const [loading, setloading] = useState(false);
   const [bulkingi,setbulkingi]  = useState([]);
+  const [ingi,setingi] = useState("");
+  const [data,setdata] = useState([]);
+
+  const apiKey = "ee3f3a932cb6490d96c6fb54d20c169b";
+
+  const apiKey2 = "a3188b57be0c43e0af15a8328e6d399e";
 
   const SearchIngribyname = async (name) => {
     setloading(true);
-    const apiKey = "a3188b57be0c43e0af15a8328e6d399e";
-    const api = `https://api.spoonacular.com/food/ingredients/search?query=${name}&number=2&apiKey=${apiKey}`;
+  
+    const api = `https://api.spoonacular.com/food/ingredients/search?query=${name}&number=6&apiKey=${apiKey}`;
 
     const response = await fetch(api);
     const output = await response.json();
@@ -28,10 +34,11 @@ const IngredientState = (props) => {
     );
     setbulkingi(finalobj);
     setloading(false);
+    console.log(finalobj);
   };
 
   return (
-    <IngredientContext.Provider value={{ SearchIngribyname, loading,bulkingi }}>
+    <IngredientContext.Provider value={{ SearchIngribyname, loading,bulkingi,loading,ingi,setingi ,data,setdata}}>
       {props.children}
     </IngredientContext.Provider>
   );

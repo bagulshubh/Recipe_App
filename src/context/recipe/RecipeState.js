@@ -10,7 +10,7 @@ const RecipeState = (props) => {
     const apiKey = "ee3f3a932cb6490d96c6fb54d20c169b";
     const apiKey2 = "a3188b57be0c43e0af15a8328e6d399e";
 
-    const api = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey2}&number=3`
+    const api = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=3`
 
     const getRandom = async()=>{
         setloading(true);
@@ -29,7 +29,7 @@ const RecipeState = (props) => {
     const findbyid = async(id) =>{
       setloading(true);
 
-      const api_id = `https://api.spoonacular.com/recipes/${id}/information?apiKey=a3188b57be0c43e0af15a8328e6d399e`;
+      const api_id = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`;
 
       const response = await fetch(api_id);
       const output = await response.json();

@@ -8,11 +8,15 @@ const SearchState = (props) => {
     const [Bulkoutput,setBulkoutput] = useState([]);
     const [loading,setloading] = useState(false);
     const [nut,setnut] = useState("");
+
+    const apiKey = "ee3f3a932cb6490d96c6fb54d20c169b";
+
+    const apiKey2 = "a3188b57be0c43e0af15a8328e6d399e";
     
     const Searchbyname = async (name)=>{
         
         setloading(true)
-        const api = `https://api.spoonacular.com/recipes/complexSearch?apiKey=a3188b57be0c43e0af15a8328e6d399e&query=${name}`
+        const api = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${name}`
 
         const response = await fetch(api);
         const output = await response.json();
@@ -23,7 +27,7 @@ const SearchState = (props) => {
     const Searchbyingri = async (name)=>{
         
       setloading(true)
-      const api = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${name}&number=5&apiKey=a3188b57be0c43e0af15a8328e6d399e`;
+      const api = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${name}&number=5&apiKey=${apiKey}`;
 
       const response = await fetch(api);
       const output = await response.json();
@@ -39,7 +43,7 @@ const SearchState = (props) => {
         setloading(true);
   
         const recipeIds = SearchFirst.map((recipe) => recipe.id).join(",");
-        const apiBulk = `https://api.spoonacular.com/recipes/informationBulk?ids=${recipeIds}&apiKey=a3188b57be0c43e0af15a8328e6d399e`;
+        const apiBulk = `https://api.spoonacular.com/recipes/informationBulk?ids=${recipeIds}&apiKey=${apiKey}`;
   
         const response = await fetch(apiBulk);
         const output = await response.json();

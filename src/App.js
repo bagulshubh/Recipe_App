@@ -11,6 +11,8 @@ import SearchbyIngri from './pages/SearchbyIngri';
 import SearchbyNutri from './pages/SearchbyNutri';
 import Ingredients from './pages/Ingredients';
 import IngredientState from './context/ingredient/IngredientState';
+import IngriSearch from './pages/IngriSearch';
+import IngriInfo from './components/IngriInfo';
 
 function App() {
 
@@ -41,6 +43,10 @@ function App() {
             <Route path='/search/bynutritions' element={<SearchbyNutri></SearchbyNutri>}></Route>
 
             <Route path='/ingredients' element={<Ingredients></Ingredients>}></Route>
+
+            <Route path='/ingredients/search' element={<IngriSearch></IngriSearch>}></Route>
+
+            <Route path='/ingredients/search/info' element={<IngriInfo></IngriInfo>}></Route>
 
           </Routes>
 

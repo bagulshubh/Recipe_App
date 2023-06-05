@@ -448,9 +448,57 @@
     font-size: 2.2rem ;
     user-select: none;
 }
-
-
-
+.ingrisearch-con{
+    width: 100%;
+    font-family: 'Lora', serif;
+    margin-top: 2vh;
+    
+}
+.child-1{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+}
+.ingricard-con{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2vw;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2vh 0;
+}
+.ingricard{
+    display: flex;
+    max-width: 30%;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition-duration: 300ms;
+}
+.ingricard:hover{
+    transform: scale(1.02);
+}
+.ingricard-img{
+    width: 100%;
+    border-radius: 10px;
+}
+.ingricard img{
+    width: 100%;
+    border-radius: 10px 10px 0px 0;
+}
+.ingricard-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.3vw;
+    font-size: 1.1vw;
+    gap: 0.3vh;
+}
 
 
 
