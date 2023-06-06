@@ -16,7 +16,7 @@ const SearchState = (props) => {
     const Searchbyname = async (name)=>{
         
         setloading(true)
-        const api = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${name}`
+        const api = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey2}&query=${name}`
 
         const response = await fetch(api);
         const output = await response.json();
@@ -27,7 +27,7 @@ const SearchState = (props) => {
     const Searchbyingri = async (name)=>{
         
       setloading(true)
-      const api = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${name}&number=5&apiKey=${apiKey}`;
+      const api = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${name}&number=5&apiKey=${apiKey2}`;
 
       const response = await fetch(api);
       const output = await response.json();
@@ -43,7 +43,7 @@ const SearchState = (props) => {
         setloading(true);
   
         const recipeIds = SearchFirst.map((recipe) => recipe.id).join(",");
-        const apiBulk = `https://api.spoonacular.com/recipes/informationBulk?ids=${recipeIds}&apiKey=${apiKey}`;
+        const apiBulk = `https://api.spoonacular.com/recipes/informationBulk?ids=${recipeIds}&apiKey=${apiKey2}`;
   
         const response = await fetch(apiBulk);
         const output = await response.json();

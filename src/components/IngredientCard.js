@@ -40,6 +40,7 @@ const IngredientCard = (props) => {
         //for that i have to create path and assign a component to it not a page it will just make page less important just assign a component to it and use it display the information of ingredient there is not much information about the ingredient anyway
 
         context.setdata(obj);
+        context.setimg(image);
         naviagte('/ingredients/search/info');
 
     }
@@ -52,7 +53,7 @@ const IngredientCard = (props) => {
         <div className='ingricard-info'>
             <p>{obj.name}</p>
             <p>{obj.consistency}</p>
-            <div>
+            <div className='price'>
                 <BsCurrencyDollar></BsCurrencyDollar>
                 <p>{obj.estimatedCost.value}</p>
             </div>
