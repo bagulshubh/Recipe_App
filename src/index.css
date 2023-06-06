@@ -435,8 +435,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     border-radius: 5px;
-    justify-content: center;
-    text-align: center;
+    justify-content: center
 }
 .ingri-opt input{
     all: unset;
