@@ -71,12 +71,12 @@
     flex-direction: column;
     border-radius: 10px;
     cursor: pointer;
-    transition-duration: 400ms;
+    transition-duration: 200ms;
     background-color: white;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 .dishcard:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 .dishcard-img{
     min-width: 100%;
@@ -155,9 +155,9 @@
 .left-side img{
     width: 100%;
     border-radius: 10px;
-    filter: drop-shadow(0 0 10px black);
+    transition-duration: 300ms;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
     cursor: pointer;
-    transition-duration: 400ms;
 }
 .left-side img:hover{
     transform: scale(1.03);
@@ -175,7 +175,7 @@
     gap: 1vw;
     flex-direction: column;
     background-color: white;
-    filter:drop-shadow(0px 0px 5px black);
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
     width: 60%;
     border-radius: 10px;
 }
@@ -589,12 +589,63 @@
     padding: 0.5vw;
     cursor: pointer;
 }
-
-
-
-
-
-
+.productinfo-con{
+    width: 100%;
+    display: flex;
+    gap: 2vw;
+    justify-content: space-between;
+    font-family: 'Lora', serif;
+    margin: 4vh 0;
+    padding: 1vw;
+    align-items: flex-start;
+}
+.firstchild-productinfo{
+    display: flex;
+    flex-direction: column;
+    min-width: 30%;
+    max-width: 30%;
+    justify-content: space-between;
+    gap: 2vh;
+    font-size: 1.2rem;
+}
+.firstchild-productinfo img{
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 1vw;
+}
+.secondchild-productinfo{
+    display: flex;
+    flex-direction: column;
+    min-width: 30%;
+    max-width: 30%;
+    font-size: 1.2rem;
+    gap:2vh;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    padding: 1vw;
+    cursor: pointer;
+    transition-duration: 600ms;
+}
+.secondchild-productinfo:hover{
+    transform: scale(1.01);
+}
+.thirdchild-productinfo{
+    display: flex;
+    flex-direction: column;
+    min-width: 30%;
+    max-width: 30%;
+    font-size: 1.2rem;
+    gap:1vh;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    padding: 1vw;
+    cursor: pointer;
+    transition-duration: 600ms;
+}
+.thirdchild-productinfo:hover{
+    transform: scale(1.01);
+}
 
 
 

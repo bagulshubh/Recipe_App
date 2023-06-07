@@ -5,19 +5,26 @@ import { useNavigate } from 'react-router-dom';
 const ProductCard = (props) => {
     const context = useContext(ProductContext);
     const naviagte = useNavigate();
-
+    const loading = context.loading;
     const obj = props.o;
 
     const getProductInfoByid = ()=>{    
-        context.getProductInfo(obj.id);
         naviagte('/products/info');
+        context.getProductInfo(obj.id);
     }
 
   return (
-    <div className='product-card' onClick={getProductInfoByid}>
-        <img src={obj.image}></img>
-        <p>{obj.title}</p>
-    </div>
+
+    loading ===true ? (<div>loading</div>):(
+
+      <div className='product-card' onClick={getProductInfoByid}>
+          <img src={obj.image}></img>
+          <p>{obj.title}</p>
+      </div>
+
+    )
+
+    
   )
 }
 
