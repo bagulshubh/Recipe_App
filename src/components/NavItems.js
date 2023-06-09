@@ -12,7 +12,7 @@ const NavItems = () => {
         <div className='nav' onClick={()=>{navigate('/search')}}>Search</div>
         <div className='nav' onClick={()=>{navigate('/ingredients')}}>Ingredients</div>
         <div className='nav' onClick={()=>{navigate('/products')}}>Products</div>
-        <div className='nav'>Meal Planning</div>
+        <div className='nav' onClick={()=>{navigate('/meal')}}>Meal Planning</div>
         <div className='nav'>Wine</div>
 
     </div>

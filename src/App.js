@@ -16,6 +16,8 @@ import IngriInfo from './components/IngriInfo';
 import Product from './pages/Product';
 import ProductState from './context/products/ProductState';
 import ProductInfo from './pages/ProductInfo';
+import Meal from './pages/Meal';
+import MealState from './context/mealplannig/MealState';
 
 function App() {
 
@@ -28,7 +30,7 @@ function App() {
 
           <IngredientState>
 
-
+            <MealState>
 
             <div className='App'>
 
@@ -60,9 +62,15 @@ function App() {
 
                 <Route path={'/products/info'} element={<ProductInfo></ProductInfo>}></Route>
 
+                <Route path={'/meal'} element={<Meal></Meal>}></Route>
+
               </Routes>
 
             </div>
+
+
+
+            </MealState>
 
           </IngredientState>
         </ProductState>
