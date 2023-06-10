@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import MealContext from '../context/mealplannig/MealContext';
+import cancle from '../assets/cancel.png'
 
 const Week = () => {
   const context = useContext(MealContext);
@@ -10,7 +11,7 @@ const Week = () => {
   return (
     <div>
       {response.length === 0 ? (
-        <div>No Data</div>
+        <img src={cancle} alt='No Data'></img>
       ) : (
         <div>
           {response.map(([day, data]) =>

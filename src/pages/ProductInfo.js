@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import ProductContext from '../context/products/ProductContext'
+import cancle from '../assets/cancel.png'
 
 const ProductInfo = () => {
 
@@ -10,9 +11,21 @@ const ProductInfo = () => {
 
   return (
 
-    loading===true ? (<div>loading</div>):(
+    loading===true ? (
+      <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+    </div>
+    ):(
 
-      obj===0 ?(<div>no data</div>) : (
+      obj===0 ?(<img src={cancle} alt='No Data'></img>) : (
 
       <div className='productinfo-con'>
 

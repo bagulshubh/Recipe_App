@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import MealContext from '../context/mealplannig/MealContext'
+import cancle from '../assets/cancel.png'
 
 const Day = () => {
 
@@ -12,7 +13,7 @@ const Day = () => {
       
         {
             obj===0 ?(
-                <div>No Data</div>
+                <img src={cancle} alt='No Data'></img>
             ):(
 
                 obj.map((o)=>{
