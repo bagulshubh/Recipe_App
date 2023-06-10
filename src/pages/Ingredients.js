@@ -94,12 +94,19 @@ const Ingredients = () => {
                     }
                 }}></input>
                 {
-                    context.sub===[]? (<span></span>):(
-                        context.sub.map((s)=>{
-                            return(
-                                <p>{s}</p>
-                            )
-                        })
+                    context.sub===[] ? (<span></span>):(
+
+                        context.sub===undefined ?(
+                            <div>No Substitute Found</div>
+                        ):(
+                                context.sub.map((s)=>{
+                                return(
+                                    <p>{s}</p>
+                                )
+                            })
+                        )
+
+                        
                     )
                 }
             </div>
