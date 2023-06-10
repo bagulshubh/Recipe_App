@@ -9,11 +9,11 @@ const NavItems = () => {
     <div className='navitems'>
       
         <div className='nav' onClick={()=>{navigate('/')}}>Home</div>
+        <div className='nav' onClick={()=>{navigate('/todayselection')}}>Today Selection</div>
         <div className='nav' onClick={()=>{navigate('/search')}}>Search</div>
         <div className='nav' onClick={()=>{navigate('/ingredients')}}>Ingredients</div>
         <div className='nav' onClick={()=>{navigate('/products')}}>Products</div>
         <div className='nav' onClick={()=>{navigate('/meal')}}>Meal Planning</div>
-        <div className='nav'>Wine</div>
 
     </div>
   )

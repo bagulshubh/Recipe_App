@@ -18,6 +18,7 @@ import ProductState from './context/products/ProductState';
 import ProductInfo from './pages/ProductInfo';
 import Meal from './pages/Meal';
 import MealState from './context/mealplannig/MealState';
+import Today from './pages/Today';
 
 function App() {
 
@@ -39,6 +40,8 @@ function App() {
               <Routes>
 
                 <Route path='/' element={<Home></Home>}></Route>
+
+                <Route path='/todayselection' element={<Today></Today>}></Route>
 
                 {/* This route is secured for search by id user cannot naviagte to this route unless the code gives access to the user */}
                 <Route path='/search/byid' element={<Searchid></Searchid>}></Route>
