@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import IngredientContext from '../context/ingredient/IngredientContext'
 import { BsCurrencyDollar } from 'react-icons/bs'
+import cancle from '../assets/cancel.png'
 
 const IngriInfo = () => {
 
@@ -11,7 +12,7 @@ const IngriInfo = () => {
 
   return (
 
-    data.length == 0 ? (<div>No data</div>) : (
+    data.length == 0 ? (<img src={cancle} alt='No Data'></img>) : (
 
 
       <div className='ingriinfo-con'>
