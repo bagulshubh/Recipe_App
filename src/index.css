@@ -10,6 +10,7 @@
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
     background-color: #fafcff ;
 }
@@ -450,7 +451,6 @@
 }
 .ingredients-con h1{
     font-size: 2.2rem ;
-    user-select: none;
 }
 .ingrisearch-con{
     width: 100%;
@@ -818,70 +818,9 @@
 .h-para{
     color: rgb(65, 65, 65);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.for-mobile{
+    display: none;
+}
 .sk-cube-grid {
     width: 40px;
     height: 40px;
@@ -924,7 +863,7 @@
     -webkit-animation-delay: 0.2s;
             animation-delay: 0.2s; }
   
-  @-webkit-keyframes sk-cubeGridScaleDelay {
+@-webkit-keyframes sk-cubeGridScaleDelay {
     0%, 70%, 100% {
       -webkit-transform: scale3D(1, 1, 1);
               transform: scale3D(1, 1, 1);
@@ -934,7 +873,7 @@
     }
   }
   
-  @keyframes sk-cubeGridScaleDelay {
+@keyframes sk-cubeGridScaleDelay {
     0%, 70%, 100% {
       -webkit-transform: scale3D(1, 1, 1);
               transform: scale3D(1, 1, 1);
@@ -943,4 +882,133 @@
               transform: scale3D(0, 0, 1);
     } 
   }
+
+ .first-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ } 
+.menu-icon{
+    display: none;
+    transform: rotate(360deg);
+    transition-duration: 300ms;
+}
+
+
+.main-heading{
+    font-size: 2.2rem;
+    padding: 1vw;
+    text-align: center;
+}
+.menu-div{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    background-color: aliceblue;
+    align-items: flex-start;
+    font-size: 1.3rem;
+    width: 60%;
+    margin: 0 40%;
+    padding: 1.2vw;
+    border-radius: 5px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    transition-duration: 500ms;
+    position: absolute;
+    z-index: 100;
+}
+
+
+
+
+
+
+/* media  query for mobile are starting here  */
+
+@media (max-width:550px) {
+    
+    
+    .for-mobile{
+        display: block;
+    }
+    .navbar{
+        display: none;
+    }
+    .App{
+        width: 92%;
+    }
+    .first-div{
+        justify-content: space-between;
+    }
+    .menu-icon{
+        display: block;
+        font-size: 2rem;
+    }
+    .search-input{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .h-hero{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 2vh;
+    }
+    .h-left{
+        width: 100%;
+    }
+    .h-left h1{
+        font-size: 1.5rem;
+    }
+    .h-left p{
+        font-size: 1rem;
+    }
+    .h-left-btn{
+        font-size: 1rem;
+        padding: 1vh 2vw;
+    }
+    .h-right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .h-right img{
+        width: 60%;
+    }
+    .h-search h1{
+        font-size: 1.5rem;
+    }
+    .h-para{
+        font-size: 1rem;
+    }
+    .h-pro h1{
+        font-size: 1.5rem;
+    }
+    .h-meal-con h1{
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
