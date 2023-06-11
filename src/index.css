@@ -473,6 +473,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 2vh 0;
+    font-size: 1.5rem;
 }
 .ingricard{
     display: flex;
@@ -899,6 +900,7 @@
     font-size: 2.2rem;
     padding: 1vw;
     text-align: center;
+    display: none;
 }
 .menu-div{
     display: flex;
@@ -926,7 +928,9 @@
 
 @media (max-width:550px) {
     
-    
+    .main-heading{
+        display: block;
+    }
     .for-mobile{
         display: block;
     }
@@ -987,6 +991,151 @@
     }
     .h-meal-con h1{
         font-size: 1.5rem;
+    }
+    .home-card-con{
+        display: flex;
+        flex-direction: column;
+    }
+    .home h1{
+        font-size: 1.5rem;
+    }
+    .dishcard{
+        width: 100%;
+    }
+    .veg{
+        width: 20px;
+        height: 20px;
+    }
+    .non-veg{
+        width: 20px;
+        height: 20px;
+    }
+    .searchid-1{
+        width: 100%;
+        padding: 0;
+    }
+    .searchid{
+        width: 100%;
+        padding: 0;
+    }
+    .firstpage{
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        width: 100%;
+    }
+    .left-side{
+        all: unset;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .left-side h1{
+        font-size: 1.5rem;
+    }
+    .right-side{
+        all: unset;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .heading{
+        font-size: 0.8rem;
+    }
+    .search-card-con{
+        all: unset;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .search-card{
+        width: 100%;
+    }
+    .ingri-opt-con{
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 2vh;
+    }
+    .ingri-opt{
+        width: 100%;
+    }
+    .ingricard-con{
+        all: unset;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    
+    .ingricard{
+        all: unset;
+    }
+    .ingricard p{
+        font-size: 1.2rem;
+    }
+    .doller{
+        font-size: 1.2rem;
+    }
+    .ingriinfo-con{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .ingriinfo-left{
+        width: 100%;
+    }
+    .ingriinfo-right{
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        width: 100%;
+    }
+    .ingriinfo-right-div{
+        width: 100%;
+    }
+    .product-con h1{
+        font-size: 1.5rem;
+    }
+    .product-con input::placeholder{
+        font-size: 1rem;
+    }
+    .productcard-con{
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .product-search h2{
+        font-size: 1rem;
+    }
+    .product-card{
+        width: 100%;
+    }
+    .productinfo-con{
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .firstchild-productinfo{
+        all: unset;
+        width: 100%;
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: column
+        ;
+        gap: 1vh;
+    }
+    .meal-con h1{
+        font-size: 1.5rem;
+    }
+    .cancle{
+        width: 100%;
     }
 }
 

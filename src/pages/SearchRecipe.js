@@ -29,7 +29,7 @@ const SearchRecipe = () => {
                 return <DishCard dish={recipe} key={recipe.id} />;
                 })
         ) : (
-          <img src={cancle} alt='No Data'></img>
+          <img src={cancle} alt='No Data' className='cancle'></img>
         )}
     </div>
   )

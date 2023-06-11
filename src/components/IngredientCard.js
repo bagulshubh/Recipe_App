@@ -54,7 +54,7 @@ const IngredientCard = (props) => {
             <p>{obj.name}</p>
             <p>{obj.consistency}</p>
             <div className='price'>
-                <BsCurrencyDollar></BsCurrencyDollar>
+                <BsCurrencyDollar className='doller'></BsCurrencyDollar>
                 <p>{obj.estimatedCost.value}</p>
             </div>
         </div>

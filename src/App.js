@@ -52,7 +52,7 @@ function App() {
               <NavBar></NavBar>
 
               <div className='first-div'>
-              <h1 className='main-heading'>Recipe Hunt</h1>
+              <h1 className='main-heading' onClick={()=>{navigate('/')}}>Recipe Hunt</h1>
 
               {
                 menu===false ? (<FiMenu className='menu-icon' onClick={()=>{menuClicked(!menu)}}></FiMenu>):(<AiOutlineClose className='menu-icon' onClick={()=>{menuClicked(!menu)}}></AiOutlineClose>)
@@ -82,7 +82,7 @@ function App() {
                     menuClicked(false);
                   }}>Ingredients</div>
                   <div onClick={()=>{
-                    navigate('/product')
+                    navigate('/products')
                     menuClicked(false);
                   }}>Product</div>
                   <div onClick={()=>{
