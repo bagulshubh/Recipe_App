@@ -10,6 +10,7 @@
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
     background-color: #fafcff ;
 }
@@ -450,7 +451,6 @@
 }
 .ingredients-con h1{
     font-size: 2.2rem ;
-    user-select: none;
 }
 .ingrisearch-con{
     width: 100%;
@@ -473,6 +473,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 2vh 0;
+    font-size: 1.5rem;
 }
 .ingricard{
     display: flex;
@@ -818,70 +819,9 @@
 .h-para{
     color: rgb(65, 65, 65);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.for-mobile{
+    display: none;
+}
 .sk-cube-grid {
     width: 40px;
     height: 40px;
@@ -924,7 +864,7 @@
     -webkit-animation-delay: 0.2s;
             animation-delay: 0.2s; }
   
-  @-webkit-keyframes sk-cubeGridScaleDelay {
+@-webkit-keyframes sk-cubeGridScaleDelay {
     0%, 70%, 100% {
       -webkit-transform: scale3D(1, 1, 1);
               transform: scale3D(1, 1, 1);
@@ -934,7 +874,7 @@
     }
   }
   
-  @keyframes sk-cubeGridScaleDelay {
+@keyframes sk-cubeGridScaleDelay {
     0%, 70%, 100% {
       -webkit-transform: scale3D(1, 1, 1);
               transform: scale3D(1, 1, 1);
@@ -943,4 +883,281 @@
               transform: scale3D(0, 0, 1);
     } 
   }
+
+ .first-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ } 
+.menu-icon{
+    display: none;
+    transform: rotate(360deg);
+    transition-duration: 300ms;
+}
+
+
+.main-heading{
+    font-size: 2.2rem;
+    padding: 1vw;
+    text-align: center;
+    display: none;
+}
+.menu-div{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    background-color: aliceblue;
+    align-items: flex-start;
+    font-size: 1.3rem;
+    width: 60%;
+    margin: 0 40%;
+    padding: 1.2vw;
+    border-radius: 5px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    transition-duration: 500ms;
+    position: absolute;
+    z-index: 100;
+}
+
+
+
+
+
+
+/* media  query for mobile are starting here  */
+
+@media (max-width:550px) {
+    
+    .main-heading{
+        display: block;
+    }
+    .for-mobile{
+        display: block;
+    }
+    .navbar{
+        display: none;
+    }
+    .App{
+        width: 92%;
+    }
+    .first-div{
+        justify-content: space-between;
+    }
+    .menu-icon{
+        display: block;
+        font-size: 2rem;
+    }
+    .search-input{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .h-hero{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 2vh;
+    }
+    .h-left{
+        width: 100%;
+    }
+    .h-left h1{
+        font-size: 1.5rem;
+    }
+    .h-left p{
+        font-size: 1rem;
+    }
+    .h-left-btn{
+        font-size: 1rem;
+        padding: 1vh 2vw;
+    }
+    .h-right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .h-right img{
+        width: 60%;
+    }
+    .h-search h1{
+        font-size: 1.5rem;
+    }
+    .h-para{
+        font-size: 1rem;
+    }
+    .h-pro h1{
+        font-size: 1.5rem;
+    }
+    .h-meal-con h1{
+        font-size: 1.5rem;
+    }
+    .home-card-con{
+        display: flex;
+        flex-direction: column;
+    }
+    .home h1{
+        font-size: 1.5rem;
+    }
+    .dishcard{
+        width: 100%;
+    }
+    .veg{
+        width: 20px;
+        height: 20px;
+    }
+    .non-veg{
+        width: 20px;
+        height: 20px;
+    }
+    .searchid-1{
+        width: 100%;
+        padding: 0;
+    }
+    .searchid{
+        width: 100%;
+        padding: 0;
+    }
+    .firstpage{
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        width: 100%;
+    }
+    .left-side{
+        all: unset;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .left-side h1{
+        font-size: 1.5rem;
+    }
+    .right-side{
+        all: unset;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .heading{
+        font-size: 0.8rem;
+    }
+    .search-card-con{
+        all: unset;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .search-card{
+        width: 100%;
+    }
+    .ingri-opt-con{
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 2vh;
+    }
+    .ingri-opt{
+        width: 100%;
+    }
+    .ingricard-con{
+        all: unset;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    
+    .ingricard{
+        all: unset;
+    }
+    .ingricard p{
+        font-size: 1.2rem;
+    }
+    .doller{
+        font-size: 1.2rem;
+    }
+    .ingriinfo-con{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .ingriinfo-left{
+        width: 100%;
+    }
+    .ingriinfo-right{
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        width: 100%;
+    }
+    .ingriinfo-right-div{
+        width: 100%;
+    }
+    .product-con h1{
+        font-size: 1.5rem;
+    }
+    .product-con input::placeholder{
+        font-size: 1rem;
+    }
+    .productcard-con{
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .product-search h2{
+        font-size: 1rem;
+    }
+    .product-card{
+        width: 100%;
+    }
+    .productinfo-con{
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+    }
+    .firstchild-productinfo{
+        all: unset;
+        width: 100%;
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: column
+        ;
+        gap: 1vh;
+    }
+    .meal-con h1{
+        font-size: 1.5rem;
+    }
+    .cancle{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

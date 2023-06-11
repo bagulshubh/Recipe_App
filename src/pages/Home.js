@@ -1,14 +1,39 @@
-import React from 'react'
+import {React,useContext,useState} from 'react'
 import plate from '../assets/plate.png'
 import { useNavigate } from 'react-router-dom'
+import { GrSearch } from 'react-icons/gr'
+import SearchContext from '../context/serach/SearchContext'
 
 const Home = () => {
 
   const naviagte = useNavigate();
+  const [name,setname] = useState("");
+  const searchcontext = useContext(SearchContext);
+
+  const changeHandler = (event)=>{
+      setname(event.target.value);
+  }
+
+  const checkkey = (event)=>{
+      if (event.key === 'Enter') {
+          searchHandler();
+      }
+  }
+
+  const searchHandler = ()=>{
+
+      searchcontext.Searchbyname(name);
+      naviagte('/search/recipe')
+  }
 
   return (
     <div className='h-con'>
-      
+
+      <div className='search-input for-mobile'>
+            <input type='text' className='input' placeholder='Enter Recipe Name' onChange={changeHandler} onKeyDown={checkkey}></input>
+            <GrSearch className='search-icon' onClick={searchHandler}></GrSearch>
+        </div>   
+
       <div className='h-hero'>
         <div className='h-left'>
           <h1>

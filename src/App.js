@@ -19,8 +19,17 @@ import ProductInfo from './pages/ProductInfo';
 import Meal from './pages/Meal';
 import MealState from './context/mealplannig/MealState';
 import Today from './pages/Today';
+import {FiMenu} from 'react-icons/fi'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {AiOutlineClose} from 'react-icons/ai'
+
+
 
 function App() {
+
+  const [menu,menuClicked] = useState(false);
+  const navigate = useNavigate();
 
   return (
 
@@ -35,7 +44,56 @@ function App() {
 
             <div className='App'>
 
+              {/* nav bar display is very much hard because we need to make it someting like disapper in mobile size divice and all new properties to it once user want to selsset it */}
+              {/* i also want to add the search bar in home section for  mobile devices because showing only the home info wont make any sence so i am adding the search bar in home page for mobile user it will make website more interactive for them */}
+
+              
+
               <NavBar></NavBar>
+
+              <div className='first-div'>
+              <h1 className='main-heading' onClick={()=>{navigate('/')}}>Recipe Hunt</h1>
+
+              {
+                menu===false ? (<FiMenu className='menu-icon' onClick={()=>{menuClicked(!menu)}}></FiMenu>):(<AiOutlineClose className='menu-icon' onClick={()=>{menuClicked(!menu)}}></AiOutlineClose>)
+              }
+
+              
+
+              </div>
+
+              {
+                menu===true ? (
+                <div className='menu-div'>
+                  <div onClick={()=>{
+                    navigate('/')
+                    menuClicked(false);
+                  }}>Home</div>
+                  <div onClick={()=>{
+                    navigate('/todayselection')
+                    menuClicked(false);
+                  }}>Today Selection</div>
+                  <div onClick={()=>{
+                    navigate('/search')
+                    menuClicked(false);
+                  }}>Search</div>
+                  <div onClick={()=>{
+                    navigate('/ingredients')
+                    menuClicked(false);
+                  }}>Ingredients</div>
+                  <div onClick={()=>{
+                    navigate('/products')
+                    menuClicked(false);
+                  }}>Product</div>
+                  <div onClick={()=>{
+                    navigate('/meal')
+                    menuClicked(false);
+                  }}>Meal Planning</div>
+                </div>
+                ):(<span></span>)
+
+                }
+              
 
               <Routes>
 

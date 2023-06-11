@@ -13,7 +13,7 @@ const Day = () => {
       
         {
             obj===0 ?(
-                <img src={cancle} alt='No Data'></img>
+                <img src={cancle} alt='No Data' className='cancle'></img>
             ):(
 
                 obj.map((o)=>{

@@ -25,7 +25,7 @@ const ProductInfo = () => {
     </div>
     ):(
 
-      obj===0 ?(<img src={cancle} alt='No Data'></img>) : (
+      obj===0 ?(<img src={cancle} alt='No Data' className='cancle'></img>) : (
 
       <div className='productinfo-con'>
 

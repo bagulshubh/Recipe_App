@@ -12,7 +12,7 @@ const IngriInfo = () => {
 
   return (
 
-    data.length == 0 ? (<img src={cancle} alt='No Data'></img>) : (
+    data.length == 0 ? (<img src={cancle} alt='No Data' className='cancle'></img>) : (
 
 
       <div className='ingriinfo-con'>

@@ -33,14 +33,14 @@ const IngredCard = (props) => {
 
   return (
     <div className='ingi-card'>
-      {
+      
         <div className='ingi-card-div'>
           <img src={image}></img>
           <p>{obj.name}</p>
           <p>Amount: {obj.amount}</p>
           <p>{obj.consistency}</p>
         </div>   
-      }
+      
     </div>
   )
 }

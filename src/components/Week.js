@@ -11,7 +11,7 @@ const Week = () => {
   return (
     <div>
       {response.length === 0 ? (
-        <img src={cancle} alt='No Data'></img>
+        <img src={cancle} alt='No Data' className='cancle'></img>
       ) : (
         <div>
           {response.map(([day, data]) =>
