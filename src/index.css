@@ -926,7 +926,7 @@
 
 /* media  query for mobile are starting here  */
 
-@media (max-width:550px) {
+@media (max-width:850px) {
     
     .main-heading{
         display: block;
@@ -1127,8 +1127,7 @@
         width: 100%;
         font-size: 1.2rem;
         display: flex;
-        flex-direction: column
-        ;
+        flex-direction: column;
         gap: 1vh;
     }
     .meal-con h1{
@@ -1136,6 +1135,9 @@
     }
     .cancle{
         width: 100%;
+    }
+    .ingi-card{
+        font-size: 1rem;
     }
 }
 

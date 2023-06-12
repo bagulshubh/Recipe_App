@@ -20,7 +20,7 @@ import Meal from './pages/Meal';
 import MealState from './context/mealplannig/MealState';
 import Today from './pages/Today';
 import {FiMenu} from 'react-icons/fi'
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {AiOutlineClose} from 'react-icons/ai'
 
@@ -30,6 +30,13 @@ function App() {
 
   const [menu,menuClicked] = useState(false);
   const navigate = useNavigate();
+
+
+  useEffect(() => {
+    window.location.pathname === '/' || window.location.pathname === ''
+      ? navigate('/')
+      : navigate('/');
+  }, []);
 
   return (
 
