@@ -1127,8 +1127,7 @@
         width: 100%;
         font-size: 1.2rem;
         display: flex;
-        flex-direction: column
-        ;
+        flex-direction: column;
         gap: 1vh;
     }
     .meal-con h1{
@@ -1136,6 +1135,9 @@
     }
     .cancle{
         width: 100%;
+    }
+    .ingi-card{
+        font-size: 1rem;
     }
 }
 
