@@ -9,30 +9,44 @@ const SearchState = (props) => {
     const [loading,setloading] = useState(false);
     const [nut,setnut] = useState("");
 
-    const apiKey = "ee3f3a932cb6490d96c6fb54d20c169b";
+    let apiKeyArr = ["ee3f3a932cb6490d96c6fb54d20c169b","a3188b57be0c43e0af15a8328e6d399e"]
+    const [ind,setind] = useState(0);
+    let key = apiKeyArr[ind];
 
-    const apiKey2 = "a3188b57be0c43e0af15a8328e6d399e";
+    useEffect(()=>{
+
+    },[ind]);
     
     const Searchbyname = async (name)=>{
         
         setloading(true)
-        const api = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey2}&query=${name}`
+        const api = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&query=${name}&number=12`
 
-        const response = await fetch(api);
-        const output = await response.json();
-        setSearchFirst(output.results);
+        try{
+          const response = await fetch(api);
+          const output = await response.json();
+          setSearchFirst(output.results);
+        }
+        catch(err){
+          console.log(err);
+          setind(ind+1);
+        }
+        
         
     }
 
     const Searchbyingri = async (name)=>{
         
       setloading(true)
-      const api = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${name}&number=5&apiKey=${apiKey2}`;
+      const api = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${name}&number=12&apiKey=${key}`;
 
-      const response = await fetch(api);
+      try{const response = await fetch(api);
       const output = await response.json();
-      console.log(output);
-      setSearchFirst(output);
+      
+      setSearchFirst(output);}catch(err){
+        console.log(err);
+        setind(ind+1);
+      }
       
   }
 
@@ -43,11 +57,14 @@ const SearchState = (props) => {
         setloading(true);
   
         const recipeIds = SearchFirst.map((recipe) => recipe.id).join(",");
-        const apiBulk = `https://api.spoonacular.com/recipes/informationBulk?ids=${recipeIds}&apiKey=${apiKey2}`;
+        const apiBulk = `https://api.spoonacular.com/recipes/informationBulk?ids=${recipeIds}&apiKey=${key}`;
   
-        const response = await fetch(apiBulk);
+        try{const response = await fetch(apiBulk);
         const output = await response.json();
-        setBulkoutput(output);
+        setBulkoutput(output);}catch(err){
+          console.log(err);
+          setind(ind+1);
+        }
         setloading(false);
       };
   
