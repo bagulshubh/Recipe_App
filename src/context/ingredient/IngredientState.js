@@ -11,16 +11,20 @@ const IngredientState = (props) => {
   const [amount,setamount] = useState(0);
   const [grams,setgrams] = useState(0);
   const [sub,setsub] = useState([]);
-  const [ind,setind] = useState(0);
 
-  let apiKeyArr = ["ee3f3a932cb6490d96c6fb54d20c169b","a3188b57be0c43e0af15a8328e6d399e"]
+  const apiKeyArr = ["ee3f3a932cb6490d96c6fb54d20c169b", "a3188b57be0c43e0af15a8328e6d399e","d314b3988ec6460abea9a4a20a78692f","5e328078a4ed42cfb3b64c81bef32fb0"];
+  const [ind,setInd] = useState(0);
+  const [key, setKey] = useState(apiKeyArr[0]);
 
-  
-  let key = apiKeyArr[ind];
+  useEffect(() => {
+    setKey(apiKeyArr[ind]);
+    console.log("Index in search ",ind);
+}, [ind]);
 
-  useEffect(()=>{
 
-  },[ind]);
+
+
+
 
 
   const SearchIngribyname = async (name) => {
@@ -28,10 +32,20 @@ const IngredientState = (props) => {
   
     const api = `https://api.spoonacular.com/food/ingredients/search?query=${name}&number=15&apiKey=${key}`;
 
-    try{
+   
       const response = await fetch(api);
       const output = await response.json();
       const obj = output.results;
+
+      if(output.status===402 || output.code===402){
+        function b(name){
+          setKey(apiKeyArr[ind]);
+          SearchIngribyname(name);
+          return;
+        }
+          b(name);
+        }
+      
   
       
       const finalobj = await Promise.all(
@@ -40,22 +54,24 @@ const IngredientState = (props) => {
   
           const api2 = `https://api.spoonacular.com/food/ingredients/${id}/information?amount=150&apiKey=${key}`;
 
-          try{
+          
             const response2 = await fetch(api2);
             const output2 = await response2.json();
+            
+          
+            if(output2.status===402 || output2.code===402){
+              function c(name){
+                setKey(apiKeyArr[ind]);
+                SearchIngribyname(name);
+                return;
+              }
+              c();
+            }
             return output2;
-          }
-          catch(err){
-            setind(ind+1);
-          }
           
         })
       );
       setbulkingi(finalobj);
-  
-    }catch(err){
-      setind(ind+1);
-    }
     setloading(false);
     
   };
@@ -65,13 +81,22 @@ const IngredientState = (props) => {
 
     const api = `https://api.spoonacular.com/food/ingredients/${id}/amount?nutrient=protein&target=${target}&unit=oz&apiKey=${key}`
 
-    try{
+   
       const response = await fetch(api);
       const output = await response.json();
+
+      if(output.status===402 || output.code===402){
+        function d(id,target){
+          setKey(apiKeyArr[ind]);
+          getAmout(id,target);
+          return;
+        }
+        d(id,target);
+      }
+
       setamount(output.amount);
-    }catch(err){
-      setind(ind+1);
-    }
+   
+      
     
 
   }
@@ -80,11 +105,21 @@ const IngredientState = (props) => {
 
     const api = `https://api.spoonacular.com/recipes/convert?ingredientName=${name}&sourceAmount=${cups}&sourceUnit=cups&targetUnit=grams&apiKey=${key}`;
 
-    try{const response = await fetch(api);
+    const response = await fetch(api);
     const output = await response.json();
-    setgrams(output.targetAmount);}catch(err){
-      setind(ind+1);
+
+    if(output.status===402 || output.code===402){
+      function e(name,cups){
+        setKey(apiKeyArr[ind]);
+        getConversion(name,cups);
+        return;
+      }
+      e(name,cups);
     }
+
+    setgrams(output.targetAmount);
+      
+    
 
   }
 
@@ -92,11 +127,22 @@ const IngredientState = (props) => {
 
     const api = `https://api.spoonacular.com/food/ingredients/substitutes?ingredientName=${ingredientName}&apiKey=${key}`
 
-   try{ const response = await fetch(api);
+    const response = await fetch(api);
     const output = await response.json();
-    setsub(output.substitutes);}catch(err){
-      setind(ind+1);
+
+    if(output.status===402 || output.code===402){
+      function a(ingredientName){
+        setKey(apiKeyArr[ind]);
+        getsubstitute(ingredientName);
+        return;
+      
+      }
+      a(ingredientName);
+        
     }
+
+    setsub(output.substitutes)
+      
   }
 
   useEffect(()=>{
