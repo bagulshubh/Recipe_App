@@ -21,10 +21,10 @@ const RecipeState = (props) => {
   }
 
   const getRandom = async () => {
-    
+
     setLoading(true);
     
-      const api = `https://api.spoonacular.com/recipes/random?apiKey=${key}&number=5`;
+      const api = `https://api.spoonacular.com/recipes/random?apiKey=${key}&number=15`;
       const ran = await fetch(api)
       console.log(ran);
       if(ran.status===402 ){
