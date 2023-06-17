@@ -2,7 +2,7 @@ import RecipeContext from "./RecipeContext";
 import { useEffect, useState } from "react";
 
 const RecipeState = (props) => {
-  const apiKeyArr = ["ee3f3a932cb6490d96c6fb54d20c169b", "a3188b57be0c43e0af15a8328e6d399e"];
+  const apiKeyArr = ["ee3f3a932cb6490d96c6fb54d20c169b", "a3188b57be0c43e0af15a8328e6d399e","d314b3988ec6460abea9a4a20a78692f","5e328078a4ed42cfb3b64c81bef32fb0"];
 
   const [ind, setInd] = useState(0);
   const [Random, setRandom] = useState([]);
@@ -17,13 +17,14 @@ const RecipeState = (props) => {
   }, [ind]);
 
   function handlererr (){
-    setInd((prev) => (prev + 1)%2);
+    setInd((prev) => (prev + 1)%4);
   }
 
   const getRandom = async () => {
+    
     setLoading(true);
     
-      const api = `https://api.spoonacular.com/recipes/random?apiKey=${key}&number=10`;
+      const api = `https://api.spoonacular.com/recipes/random?apiKey=${key}&number=5`;
       const ran = await fetch(api)
       console.log(ran);
       if(ran.status===402 ){

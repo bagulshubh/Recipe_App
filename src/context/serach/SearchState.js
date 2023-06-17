@@ -9,29 +9,40 @@ const SearchState = (props) => {
     const [loading,setloading] = useState(false);
     const [nut,setnut] = useState("");
 
-    let apiKeyArr = ["ee3f3a932cb6490d96c6fb54d20c169b","a3188b57be0c43e0af15a8328e6d399e"]
-    const [ind,setind] = useState(0);
-    let key = apiKeyArr[ind];
+    const apiKeyArr = ["ee3f3a932cb6490d96c6fb54d20c169b", "a3188b57be0c43e0af15a8328e6d399e","d314b3988ec6460abea9a4a20a78692f","5e328078a4ed42cfb3b64c81bef32fb0"];
+    const [ind,setInd] = useState(0);
+    const [key, setKey] = useState(apiKeyArr[0]);
 
-    useEffect(()=>{
+    useEffect(() => {
+      setKey(apiKeyArr[ind]);
+      console.log("Index in search ",ind);
+    }, [ind]);
 
-    },[ind]);
+
+    function handerr (name){
+      setInd((prev) => (prev + 1)%4);
+       if(name!==""){
+         Searchbyname(name);
+       //work in progress for this one not yet done as per need}     
+      }
+  }
     
     const Searchbyname = async (name)=>{
         
         setloading(true)
         const api = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${key}&query=${name}&number=12`
 
-        try{
+       
           const response = await fetch(api);
           const output = await response.json();
+          console.log("search by name",output);
+
+          if(output.code===402 ){
+            handerr(name);
+            return;
+          }
+
           setSearchFirst(output.results);
-        }
-        catch(err){
-          console.log(err);
-          setind(ind+1);
-        }
-        
         
     }
 
@@ -40,36 +51,47 @@ const SearchState = (props) => {
       setloading(true)
       const api = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${name}&number=12&apiKey=${key}`;
 
-      try{const response = await fetch(api);
+      const response = await fetch(api);
       const output = await response.json();
       
-      setSearchFirst(output);}catch(err){
-        console.log(err);
-        setind(ind+1);
+      if(output.status===402 ){
+        handerr();
+        return;
       }
+
+
+      setSearchFirst(output);
+        
       
   }
 
     useEffect(() => {
       const convertToBulk = async () => {
-        if (SearchFirst.length === 0) return;
+        if (SearchFirst===undefined || SearchFirst===[] || SearchFirst.length === 0) {
+          return
+        };
   
         setloading(true);
   
         const recipeIds = SearchFirst.map((recipe) => recipe.id).join(",");
         const apiBulk = `https://api.spoonacular.com/recipes/informationBulk?ids=${recipeIds}&apiKey=${key}`;
   
-        try{const response = await fetch(apiBulk);
+        const response = await fetch(apiBulk);
         const output = await response.json();
-        setBulkoutput(output);}catch(err){
-          console.log(err);
-          setind(ind+1);
+        console.log("Convert to bulk",output);
+
+        if(output.status===402 ){
+          handerr("");
+          return;
         }
+
+        setBulkoutput(output);
+          
         setloading(false);
       };
   
       convertToBulk();
-    }, [SearchFirst]);
+    }, [SearchFirst,ind]);
 
 
   return (
@@ -78,6 +100,7 @@ const SearchState = (props) => {
     </SearchContext.Provider>
   )
 }
+
 
 export default SearchState
 
