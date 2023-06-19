@@ -8,9 +8,9 @@ function Today() {
   const context = useContext(RecipeContext);
   const loading = context.loading;
 
-  useEffect(()=>{
-    context.getRandom();
-  },[]);
+  // useEffect(()=>{
+  //   context.getRandom();
+  // },[]);
 
   const Random = context.Random;
   
@@ -18,8 +18,13 @@ function Today() {
   return (
     <div className='home-1'>
 
+    
+
       {
-        loading===true? (
+
+        Random===[] || Random===undefined ? (<div>No data</div>) : (
+
+          loading===true? (
           <div class="sk-cube-grid">
             <div class="sk-cube sk-cube1"></div>
             <div class="sk-cube sk-cube2"></div>
@@ -48,6 +53,13 @@ function Today() {
 
           </div>
         )
+
+
+
+
+        )
+
+        
       }
 
     </div>

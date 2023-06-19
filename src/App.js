@@ -20,9 +20,10 @@ import Meal from './pages/Meal';
 import MealState from './context/mealplannig/MealState';
 import Today from './pages/Today';
 import {FiMenu} from 'react-icons/fi'
-import { useState,useEffect } from 'react';
+import { useState,useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {AiOutlineClose} from 'react-icons/ai'
+import RecipeContext from './context/recipe/RecipeContext';
 
 
 
@@ -30,6 +31,7 @@ function App() {
 
   const [menu,menuClicked] = useState(false);
   const navigate = useNavigate();
+  const context = useContext(RecipeContext);
 
 
   useEffect(() => {
@@ -82,6 +84,7 @@ function App() {
                   }}>Today Selection</div>
                   <div onClick={()=>{
                     navigate('/search')
+                    context.getRandom();
                     menuClicked(false);
                   }}>Search</div>
                   <div onClick={()=>{
