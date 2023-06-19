@@ -24,7 +24,7 @@ const RecipeState = (props) => {
 
     setLoading(true);
     
-      const api = `https://api.spoonacular.com/recipes/random?apiKey=${key}&number=15`;
+      const api = `https://api.spoonacular.com/recipes/random?apiKey=${key}&number=12`;
       const ran = await fetch(api)
       console.log(ran);
       if(ran.status===402 ){
