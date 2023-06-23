@@ -33,7 +33,7 @@ const SearchbyNutri = () => {
             }
             </div>
 
-            <div className='search-btn' onClick={clickHandler}>
+            <div className='search-btn'>
                 Search <BiSearch></BiSearch>
             </div>
 
