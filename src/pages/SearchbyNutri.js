@@ -37,7 +37,7 @@ const SearchbyNutri = () => {
                 Search <BiSearch></BiSearch>
             </div>
 
-            This one is not Handled yet need more time to decide which data struture to use for storing the nutritions
+            This fuction is under maintanice. Check Later.
 
         </div>
     )
