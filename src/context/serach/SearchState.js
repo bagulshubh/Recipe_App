@@ -7,11 +7,13 @@ const SearchState = (props) => {
     const [SearchFirst,setSearchFirst] = useState([]);
     const [Bulkoutput,setBulkoutput] = useState([]);
     const [loading,setloading] = useState(false);
-    const [nut,setnut] = useState("");
-
+    const [nutdata,setnutdata] = useState([]);
     const apiKeyArr = ["ee3f3a932cb6490d96c6fb54d20c169b", "a3188b57be0c43e0af15a8328e6d399e","d314b3988ec6460abea9a4a20a78692f","5e328078a4ed42cfb3b64c81bef32fb0"];
     const [ind,setInd] = useState(0);
-    const [key, setKey] = useState(apiKeyArr[0]);
+    const [key, setKey] = useState(apiKeyArr[1]);
+
+    //data structrue to store the nutrition details
+    const [nut,setnut] = useState({});
 
     useEffect(() => {
       setKey(apiKeyArr[ind]);
@@ -94,8 +96,27 @@ const SearchState = (props) => {
     }, [SearchFirst,ind]);
 
 
+    const SearchbyNutri  = async (arr)=>{
+
+      let str = "";
+      const keys = Object.keys(arr);
+      keys.forEach(key => {
+        const value = arr[key];
+        str = str + key + "=" + value + "&";
+      });
+      console.log(str);
+
+      const url = `https://api.spoonacular.com/recipes/findByNutrients?${str}number=10&apiKey=${key}`;
+
+      const response = await fetch(url);
+      console.log("THii",response)
+      const output = await response.json();
+      setSearchFirst(output);
+
+    }
+
   return (
-    <SearchContext.Provider value={{Searchbyname,SearchFirst,Bulkoutput,loading,Searchbyingri,setnut,nut}}>
+    <SearchContext.Provider value={{Searchbyname,SearchFirst,Bulkoutput,loading,Searchbyingri,setnut,nut,SearchbyNutri,nutdata}}>
         {props.children }
     </SearchContext.Provider>
   )
