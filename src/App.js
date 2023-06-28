@@ -24,7 +24,7 @@ import { useState,useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {AiOutlineClose} from 'react-icons/ai'
 import RecipeContext from './context/recipe/RecipeContext';
-
+import Nuti from './pages/Nuti';
 
 
 function App() {
@@ -134,6 +134,8 @@ function App() {
                 <Route path={'/products/info'} element={<ProductInfo></ProductInfo>}></Route>
 
                 <Route path={'/meal'} element={<Meal></Meal>}></Route>
+
+                <Route path={'/search/nuti'} element={<Nuti></Nuti>}></Route>
 
               </Routes>
 
