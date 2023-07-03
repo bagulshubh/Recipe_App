@@ -104,13 +104,14 @@ const SearchState = (props) => {
         const value = arr[key];
         str = str + key + "=" + value + "&";
       });
-      console.log(str);
+      //console.log(str);
 
       const url = `https://api.spoonacular.com/recipes/findByNutrients?${str}number=10&apiKey=${key}`;
 
       const response = await fetch(url);
-      console.log("THii",response)
+      //console.log("THii",response)
       const output = await response.json();
+      setSearchFirst([]);
       setSearchFirst(output);
 
     }
