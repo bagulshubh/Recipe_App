@@ -6,7 +6,7 @@ const Week = () => {
   const context = useContext(MealContext);
   const response = Object.entries(context.weekObj);
 
-  console.log(response);
+  //console.log(response);
 
   return (
     <div>

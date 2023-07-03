@@ -26,7 +26,7 @@ const IngredientCard = (props) => {
       
       }
       catch(err){
-        console.log(err);
+        console.log("Error in getting image from unsplashed",err);
       }
     } 
 

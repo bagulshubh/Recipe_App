@@ -17,7 +17,7 @@ const SearchState = (props) => {
 
     useEffect(() => {
       setKey(apiKeyArr[ind]);
-      console.log("Index in search ",ind);
+      //console.log("Index in search ",ind);
     }, [ind]);
 
 
@@ -37,7 +37,7 @@ const SearchState = (props) => {
        
           const response = await fetch(api);
           const output = await response.json();
-          console.log("search by name",output);
+          //console.log("search by name",output);
 
           if(output.code===402 ){
             handerr(name);
@@ -80,7 +80,7 @@ const SearchState = (props) => {
   
         const response = await fetch(apiBulk);
         const output = await response.json();
-        console.log("Convert to bulk",output);
+        //console.log("Convert to bulk",output);
 
         if(output.status===402 ){
           handerr("");

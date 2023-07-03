@@ -10,7 +10,7 @@ const ProductState = (props) =>{
 
     useEffect(() => {
         setKey(apiKeyArr[ind]);
-        console.log("Index in product ",ind);
+        //console.log("Index in product ",ind);
     }, [ind]);
 
     function handerr (name,id){

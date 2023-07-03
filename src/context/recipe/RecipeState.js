@@ -13,7 +13,7 @@ const RecipeState = (props) => {
   useEffect(() => {
     setKey(apiKeyArr[ind]);
     getRandom();
-    console.log(ind);
+    //console.log(ind);
   }, [ind]);
 
   function handlererr (){
@@ -43,7 +43,7 @@ const RecipeState = (props) => {
       const response = await fetch(api_id);
       
       const output = await response.json();
-      console.log(output);
+      //console.log(output);
       if(output.status===402 ){
         handlererr();
         return;

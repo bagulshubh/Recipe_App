@@ -19,7 +19,7 @@ const IngredCard = (props) => {
       
       }
       catch(err){
-        console.log(err);
+        console.log("Error in IngreCard Component",err);
       }
       
       
