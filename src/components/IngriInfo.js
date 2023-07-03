@@ -8,7 +8,7 @@ const IngriInfo = () => {
   const context = useContext(IngredientContext);
   const data = context.data;
   const img = context.img;
-  console.log(data);
+  //console.log(data);
 
   return (
 

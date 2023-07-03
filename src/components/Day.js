@@ -6,7 +6,7 @@ const Day = () => {
 
     const response = useContext(MealContext);
     const obj = response.dayObj;
-    console.log(obj);
+    //console.log(obj);
 
   return (
     <div className='day-con'>

@@ -18,7 +18,7 @@ const IngredientState = (props) => {
 
   useEffect(() => {
     setKey(apiKeyArr[ind]);
-    console.log("Index in search ",ind);
+    //console.log("Index in search ",ind);
 }, [ind]);
 
 

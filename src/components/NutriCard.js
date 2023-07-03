@@ -4,7 +4,7 @@ import SearchContext from '../context/serach/SearchContext';
 const NutriCard = (props) => {
     const context = useContext(SearchContext);
     const para = props.para;
-    const nut = context.nut;
+    //const nut = context.nut;
     const setnut = context.setnut;
     
 

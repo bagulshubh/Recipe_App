@@ -14,13 +14,13 @@ const MealState = (props) => {
 
   useEffect(() => {
     setKey(apiKeyArr[ind]);
-    console.log("Index in search ",ind);
+    //console.log("Index in search ",ind);
 }, [ind]);
 
 
   function handerr (time,cal,diet,ingrilist){
     setKey(apiKeyArr[ind]);
-    console.log("Index in meal ",ind);
+    //console.log("Index in meal ",ind);
     generateMeal(time,cal,diet,ingrilist);
   }
 

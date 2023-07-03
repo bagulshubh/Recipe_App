@@ -6,7 +6,7 @@ const ProductInfo = () => {
 
     const context = useContext(ProductContext);
     const obj = context.info;
-    console.log("THis is obj",obj);
+    //console.log("THis is obj",obj);
     const loading = context.loading;
 
   return (
